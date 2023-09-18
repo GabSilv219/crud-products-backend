@@ -12,10 +12,10 @@ class Server {
 
     constructor() {
         this.app = express();
-        this.port = process.env.API_PORT || '3000';
+        this.port = process.env.PORT || '3000';
         this.listen();
         this.midlewares();
-        // this.routes();
+        this.routes();
         this.dbConnect();
     }
 
@@ -25,18 +25,17 @@ class Server {
         })
     }
 
-    // routes() {
-    //     this.app.get('/', (req: Request, res: Response) => {
-    //         res.json({
-    //             msg: 'API Working'
-    //         })
-    //     })
-    //     this.app.use('/api/products/', routes)
-    // }
+    routes() {
+        this.app.get('/', (req: Request, res: Response) => {
+            res.json({
+                msg: 'API Working'
+            })
+        })
+        this.app.use('/api/products/', routes)
+    }
 
     midlewares() {
         this.app.use(express.json());
-        this.app.use(routes);
         this.app.use(cors());
     }
 
