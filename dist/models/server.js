@@ -24,7 +24,7 @@ class Server {
         this.port = process.env.API_PORT || '3000';
         this.listen();
         this.midlewares();
-        this.routes();
+        // this.routes();
         this.dbConnect();
     }
     listen() {
@@ -32,16 +32,17 @@ class Server {
             console.log(`Application Running on Port: ${this.port}`);
         });
     }
-    routes() {
-        this.app.get('/', (req, res) => {
-            res.json({
-                msg: 'API Working'
-            });
-        });
-        this.app.use('/api/products/', router_1.default);
-    }
+    // routes() {
+    //     this.app.get('/', (req: Request, res: Response) => {
+    //         res.json({
+    //             msg: 'API Working'
+    //         })
+    //     })
+    //     this.app.use('/api/products/', routes)
+    // }
     midlewares() {
         this.app.use(express_1.default.json());
+        this.app.use(router_1.default);
         this.app.use((0, cors_1.default)());
     }
     dbConnect() {
