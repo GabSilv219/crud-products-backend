@@ -26,7 +26,7 @@ class Server {
     }
 
     routes() {
-        this.app.use('/', routes)
+        this.app.use(routes)
     }
 
     midlewares() {
