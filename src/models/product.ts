@@ -15,8 +15,8 @@ const Product = db.define('products', {
         type: DataTypes.NUMBER
     }
 }, {
-    createdAt: true,
-    updatedAt: true
+    createdAt: false,
+    updatedAt: false
 });
 
 export default Product;
