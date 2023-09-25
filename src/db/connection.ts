@@ -3,8 +3,8 @@ import dotenv from 'dotenv'
 
 dotenv.config();
 
-const sequelize = new Sequelize('railway', 'postgres', 'M6G8wA3LjrvOMwOwxHM1', {
-    host: 'containers-us-west-77.railway.app',
+const sequelize = new Sequelize('railway', 'postgres', 'HsDO8bYp2FCTw3CQDkKf', {
+    host: 'containers-us-west-155.railway.app',
     dialect: 'postgres'
   });
 
