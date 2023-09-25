@@ -26,12 +26,7 @@ class Server {
     }
 
     routes() {
-        this.app.get('/', (req: Request, res: Response) => {
-            res.json({
-                msg: 'API Working'
-            })
-        })
-        this.app.use('/api/products/', routes)
+        this.app.use('/', routes)
     }
 
     midlewares() {
